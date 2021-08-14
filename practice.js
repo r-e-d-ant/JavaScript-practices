@@ -4,6 +4,9 @@ console.log("Hello, World")
 // = Chapter
 // > Title
 // >> Subtitle
+/* +
+Challenge
+*/
 /*
 - Description
 */
@@ -128,3 +131,61 @@ var contacts = [
         "likes": ["JavaScript", "Gaming", "Foxes"]
     }
 ];
+
+function lookUpProfile(name, prop){
+    // Only change code below this line
+    for (var i = 0; i < contacts.length; i++){
+        if (contacts[i].firstName === name){
+            if (contacts[i].hasOwnProperty(prop)){
+                console.log(contacts[i][prop])
+            } else {
+                console.log("No such property")
+            }
+        }
+    }
+    console.log("No such contact")
+    // Only change code above this line
+}
+
+
+lookUpProfile("Harry", "number");
+
+// > Random numbers
+function randomDecimal(){
+    console.log(Math.floor(1.6))
+}
+
+randomDecimal()
+
+// > Generate a random a number from a given range.
+
+function randomRange(myMin, myMax) {
+    // Only change code below this line
+    console.log((myMax - myMin + 1));
+    console.log(Math.random() * (myMax - myMin + 1));
+    console.log(Math.floor(Math.random() * (myMax - myMin + 1)));
+    console.log(Math.floor(Math.random() * (myMax - myMin + 1)) + myMin);
+    // Only change code above this line
+  }
+
+randomRange(1, 100);
+console.log(Math.floor(Math.random() * (5 - 0 + 1)) + 0);
+
+/* +
+Create a function called randomRange that takes a range myMin and myMax
+and returns a random whole number that's greater than or equal to myMin,
+and is less than or equal to myMax, inclusive.
+*/
+
+function randomRange(myMin, myMax) {
+    // Only change code below this line
+    var randomNumber = Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+    if (randomNumber >= myMin && randomNumber <= myMax){
+        console.log(randomNumber);
+    }
+    // Only change code above this line
+}
+
+randomRange(2, 10)
+
+// > Return an integer from string
