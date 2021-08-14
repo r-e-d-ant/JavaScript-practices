@@ -856,3 +856,30 @@ const makeServerRequest = new Promise((resolve, reject) => {
 })
 */
 
+// - REGEX
+
+// > Test
+
+/*
+-
+Using test method
+Match literal string.
+*/
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yes";
+let getMach = /Yes/;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+/*
+-
+Using test method
+Match literal string with different possibilities.
+*/
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yes|Yeah/;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+// > Ignore case while matching (Using the "i" flag).
