@@ -856,3 +856,200 @@ const makeServerRequest = new Promise((resolve, reject) => {
 })
 */
 
+// - REGEX
+
+// > Test
+
+/*
+-
+Using test method
+Match literal string.
+*/
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yes";
+let getMach = /Yes/;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+/*
+-
+Using test method
+Match literal string with different possibilities.
+*/
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yes|Yeah/;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+// > Ignore case while matching (Using the "i" flag).
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yes|Yeah/i;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+// > Extract Matches.
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yeah/;
+let storeMatch = myString.match(getMach);
+console.log(storeMatch);
+
+let m = "Hello, World".match(/Hello/);
+console.log(m);
+
+/*
+-
+Note that the .match syntax is the "opposite"
+of the .test method you have been using thus far:
+*/
+
+// > Find more than the first match.
+
+let  testStr = "Repeat, Repeat, Repeat";
+let repeatRegex = /Repeat/g;
+let matches = testStr.match(repeatRegex);
+console.log(matches);
+
+// > Match Anything with Wildcard Period
+
+let humStr = "I will hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+let humResult = huRegex.test(humStr);
+console.log(humResult); // true
+
+let hugResult = huRegex.test(hugStr);
+console.log(hugResult); // true
+
+// > Match Single Character with Multiple Possibilities
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+console.log(bigStr.match(bgRegex));
+console.log(bagStr.match(bgRegex));
+console.log(bugStr.match(bgRegex));
+console.log(bogStr.match(bgRegex));
+
+// > Match Letters of the Alphabet
+// >> Inside a character set, you can define a range of characters to match using a hyphen character: -.
+
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let bgRegex = /[a-e]at/;
+console.log(catStr.match(bgRegex));
+console.log(batStr.match(bgRegex));
+console.log(matStr.match(bgRegex));
+
+// > Match Numbers and Letters of the Alphabet
+
+let mutoStr = "Muto83242309";
+let myRegex = /[a-z0-9]/ig;
+console.log(mutoStr.match(myRegex));
+
+// > Create a single regex that matches all characters that are not a number or a vowel.
+
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9^aeiou]/ig; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+console.log(result);
+
+// > Match Characters that Occur One or More Times
+
+/*
+-
+For example, /a+/g would find one match in abc and return ["a"].
+Because of the +, it would also find a single match in aabc and return ["aa"].
+If it were instead checking the string abab, it would find two matches
+and return ["a", "a"] because the a characters are not in a row - there is a b between them.
+Finally, since there is no a in the string bcd, it wouldn't find a match.
+*/
+
+let difficultSpelling = "Mississippi";
+let myRegex = /i+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+console.log(result);
+
+// > Match Characters that Occur Zero or More Times
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
+
+// > Find Characters with Lazy Matching
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?1>/; // Change this line
+let result = text.match(myRegex);
+console.log(result);
+
+// > Match Beginning String Patterns
+
+// >> Search for patterns in specific positions in strings.
+
+/*
+-
+In an earlier challenge, you used the caret character (^) inside a character
+set to create a negated character set in the form [^thingsThatWillNotBeMatched].
+Outside of a character set, the caret is used to search for patterns at
+the beginning of strings.
+*/
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+
+/*
+-
+The first test call would return true, while the second would return false
+*/
+
+/*
++
+Challenge:
+Use the caret character in a regex to find Cal only
+in the beginning of the string rickyAndCal.
+*/
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+
+// > Match Ending String Patterns
+// >> Search for patterns at the end of strings.
+
+/*
+-
+You can search the end of strings using
+the dollar sign character $ at the end of the regex.
+*/
+
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+
+// The first test call would return true, while the second would return false.
+
+/*
++
+Challenge:
+Use the anchor character ($) to match the string caboose at the end of the string caboose.
+*/
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+
