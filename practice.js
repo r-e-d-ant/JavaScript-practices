@@ -4,6 +4,9 @@ console.log("Hello, World")
 // = Chapter
 // > Title
 // >> Subtitle
+/* +
+Challenge
+*/
 /*
 - Description
 */
@@ -128,3 +131,96 @@ var contacts = [
         "likes": ["JavaScript", "Gaming", "Foxes"]
     }
 ];
+
+function lookUpProfile(name, prop){
+    // Only change code below this line
+    for (var i = 0; i < contacts.length; i++){
+        if (contacts[i].firstName === name){
+            if (contacts[i].hasOwnProperty(prop)){
+                console.log(contacts[i][prop])
+            } else {
+                console.log("No such property")
+            }
+        }
+    }
+    console.log("No such contact")
+    // Only change code above this line
+}
+
+
+lookUpProfile("Harry", "number");
+
+// > Generate Random fraction with Js
+function randomDecimal(){
+    console.log(Math.floor(1.6))
+}
+
+randomDecimal()
+
+// > Generate a random a number from a given range.
+
+function randomRange(myMin, myMax) {
+    // Only change code below this line
+    console.log((myMax - myMin + 1));
+    console.log(Math.random() * (myMax - myMin + 1));
+    console.log(Math.floor(Math.random() * (myMax - myMin + 1)));
+    console.log(Math.floor(Math.random() * (myMax - myMin + 1)) + myMin);
+    // Only change code above this line
+  }
+
+randomRange(1, 100);
+console.log(Math.floor(Math.random() * (5 - 0 + 1)) + 0);
+
+/* +
+Create a function called randomRange that takes a range myMin and myMax
+and returns a random whole number that's greater than or equal to myMin,
+and is less than or equal to myMax, inclusive.
+*/
+
+function randomRange(myMin, myMax) {
+    // Only change code below this line
+    var randomNumber = Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+    if (randomNumber >= myMin && randomNumber <= myMax){
+        console.log(randomNumber);
+    }
+    // Only change code above this line
+}
+
+randomRange(2, 10)
+
+// > Return an integer from string
+
+console.log(parseInt("2002"))
+console.log(parseInt("22", 16))
+
+// > Use the conditionary (Ternary) operator
+function checkSign(num) {
+    return (num === 0) ? "zero"
+      : (num > 0) ? "positive"
+      : "negative";
+    }
+
+// > Use Multiple Conditional (Ternary) Operators
+function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a > b) ? "a is greater" 
+      : "b is greater";
+}
+  
+checkSign(10);
+
+// > // Use Recursion to Create a Range of Numbers
+function rangeOfNumbers(startNum, endNum) {
+    if (endNum - startNum === 0){
+        return [startNum];
+    } else {
+        const numbers = rangeOfNumbers(startNum, endNum - 1);
+        numbers.push(endNum);
+        console.log(numbers);
+    }
+  }
+
+rangeOfNumbers(1, 5)
+
+// ===-----------=== //
+
