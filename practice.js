@@ -952,3 +952,104 @@ let mutoStr = "Muto83242309";
 let myRegex = /[a-z0-9]/ig;
 console.log(mutoStr.match(myRegex));
 
+// > Create a single regex that matches all characters that are not a number or a vowel.
+
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9^aeiou]/ig; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+console.log(result);
+
+// > Match Characters that Occur One or More Times
+
+/*
+-
+For example, /a+/g would find one match in abc and return ["a"].
+Because of the +, it would also find a single match in aabc and return ["aa"].
+If it were instead checking the string abab, it would find two matches
+and return ["a", "a"] because the a characters are not in a row - there is a b between them.
+Finally, since there is no a in the string bcd, it wouldn't find a match.
+*/
+
+let difficultSpelling = "Mississippi";
+let myRegex = /i+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+console.log(result);
+
+// > Match Characters that Occur Zero or More Times
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
+
+// > Find Characters with Lazy Matching
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?1>/; // Change this line
+let result = text.match(myRegex);
+console.log(result);
+
+// > Match Beginning String Patterns
+
+// >> Search for patterns in specific positions in strings.
+
+/*
+-
+In an earlier challenge, you used the caret character (^) inside a character
+set to create a negated character set in the form [^thingsThatWillNotBeMatched].
+Outside of a character set, the caret is used to search for patterns at
+the beginning of strings.
+*/
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+
+/*
+-
+The first test call would return true, while the second would return false
+*/
+
+/*
++
+Challenge:
+Use the caret character in a regex to find Cal only
+in the beginning of the string rickyAndCal.
+*/
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+
+// > Match Ending String Patterns
+// >> Search for patterns at the end of strings.
+
+/*
+-
+You can search the end of strings using
+the dollar sign character $ at the end of the regex.
+*/
+
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+
+// The first test call would return true, while the second would return false.
+
+/*
++
+Challenge:
+Use the anchor character ($) to match the string caboose at the end of the string caboose.
+*/
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+
