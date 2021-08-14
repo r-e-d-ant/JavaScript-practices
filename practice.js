@@ -890,3 +890,65 @@ let storeMatch = getMach.test(myString);
 console.log(storeMatch); // true.
 
 // > Extract Matches.
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yeah/;
+let storeMatch = myString.match(getMach);
+console.log(storeMatch);
+
+let m = "Hello, World".match(/Hello/);
+console.log(m);
+
+/*
+-
+Note that the .match syntax is the "opposite"
+of the .test method you have been using thus far:
+*/
+
+// > Find more than the first match.
+
+let  testStr = "Repeat, Repeat, Repeat";
+let repeatRegex = /Repeat/g;
+let matches = testStr.match(repeatRegex);
+console.log(matches);
+
+// > Match Anything with Wildcard Period
+
+let humStr = "I will hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+let humResult = huRegex.test(humStr);
+console.log(humResult); // true
+
+let hugResult = huRegex.test(hugStr);
+console.log(hugResult); // true
+
+// > Match Single Character with Multiple Possibilities
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+console.log(bigStr.match(bgRegex));
+console.log(bagStr.match(bgRegex));
+console.log(bugStr.match(bgRegex));
+console.log(bogStr.match(bgRegex));
+
+// > Match Letters of the Alphabet
+// >> Inside a character set, you can define a range of characters to match using a hyphen character: -.
+
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let bgRegex = /[a-e]at/;
+console.log(catStr.match(bgRegex));
+console.log(batStr.match(bgRegex));
+console.log(matStr.match(bgRegex));
+
+// > Match Numbers and Letters of the Alphabet
+
+let mutoStr = "Muto83242309";
+let myRegex = /[a-z0-9]/ig;
+console.log(mutoStr.match(myRegex));
+
