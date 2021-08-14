@@ -461,3 +461,72 @@ function makeList(arr) {
 
 const failuresList = makeList(result.failure);
 
+// > Write Concise Object Literal Declarations Using Object Property Shorthand
+
+const createPerson = (name, age, gender) => ({
+    // Only change code below this line
+    name,
+    age,
+    gender
+});
+
+// Only change code above this line
+console.log(createPerson('tito', 19, 'male'))
+
+// > Write Concise Declarative Functions with ES6
+// >> In ES5 Code:
+
+const person = {
+    name: "Taylor",
+    sayHello: function() {
+      return `Hello! My name is ${this.name}.`;
+    }
+};
+
+// >> In ES6 Code :
+const person = {
+    name: "Taylor",
+    sayHello() {
+      return `Hello! My name is ${this.name}.`;
+    }
+};
+
+/*
+-
+Use class Syntax to Define a Constructor Function
+In ES5:
+*/
+
+var Vegetable = function(name) {
+    this.name = name;
+}
+
+var carrot = new Vegetable('Carrot')
+console.log(carrot.name)
+
+// In ES6:
+
+class Vegetable {
+    constructor(name){
+        this.name = name;
+    }
+}
+const carrot = new Vegetable("Carrot");
+console.log(carrot.name)
+
+class Student {
+    constructor(firstName, lastName, age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+}
+
+// > Console a table
+
+var tito = new Student("Tito", "Muto", 19)
+var jane = new Student("Jane", "Pie", 76)
+var doe = new Student("John", "Doe", 22)
+
+console.table([tito, jane, doe])
+
