@@ -224,3 +224,41 @@ rangeOfNumbers(1, 5)
 
 // ===-----------=== //
 
+// = ECMASCRIPT (ES6)
+
+// > Explore Differences Between the var and let Keywords
+
+/*
+-
+Here there is no Error, because variable
+from var keyword can be overwritten without no problem.
+*/
+var y = 3;
+var y = 9;
+console.log(y)
+
+/*
+-
+Here there be an error, because
+variable from let keyword can't be overwritten.
+*/
+
+let x = 3;
+let x = 10;
+console.log(x)
+
+// > Declare a Read-Only Variable with the const Keyword
+
+var F_NAME = "Mugisha";
+F_NAME = F_NAME + " Thierry";  // No Error
+console.log(F_NAME)
+
+let F_NAME = "Mugisha";
+F_NAME = F_NAME + " Thierry";  // No Error
+console.log(F_NAME)
+
+const F_NAME = "Mugisha";
+F_NAME = F_NAME + " Thierry";  // Error
+console.log(F_NAME)
+
+// > Prevent Object Mutation
