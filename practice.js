@@ -1053,3 +1053,37 @@ let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // Change this line
 let result = lastRegex.test(caboose);
 
+// > Match All Letters and Numbers
+
+/*
+The closest character class in JavaScript to match the alphabet is \w.
+This shortcut is equal to [A-Za-z0-9_].
+This character class matches upper and lowercase letters plus numbers.
+Note, this character class also includes the underscore character (_).
+*/
+
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers);
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
+
+/*
+-
+// All four of these test calls would return true.
+// These shortcut character classes are also known as shorthand character classes.
+*/
+
+/*
++
+// Challenge:
+// Use the shorthand character class \w
+// to count the number of alphanumeric characters in various quotes and strings.
+*/
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /change/; // Change this line
+let result = quoteSample.match(alphabetRegexV2).length;
