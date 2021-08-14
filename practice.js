@@ -330,3 +330,113 @@ It is possible to pass more than one argument into an arrow function.
 const multiplier = (item, multiply) => item * multiply;
 console.log(multiplier(2, 6))
 
+// > Use the Spread Operator to Evaluate Arrays In-Place
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];  // Change this line
+console.log(arr2);
+
+// > Use Destructuring Assignment to Extract Values from Objects
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+};
+
+// Only change code below this line
+const {today, tomorrow} = HIGH_TEMPERATURES;
+console.log(today, tomorrow)
+// Only change code above this line
+
+// > Use Destructuring Assignment to Assign Variables from Objects
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Only change code below this line
+  
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+  
+// Only change code above this line
+
+console.log(highToday, highTomorrow)
+
+// > Use Destructuring Assignment to Assign Variables from Nested Objects
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// Only change code below this line
+const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+// Only change code above this line
+
+// > Use Destructuring Assignment to Assign Variables from Arrays
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);
+
+/*
+-
+The console will display the values of a and b as 1, 2.
+We can also access the value at any index in an array
+with destructuring by using commas to reach the desired
+index:
+*/
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+
+/*
+-
+The console will display the values of a, b, and c as 1, 2, 5.
+*/
+
+// > Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  // Only change code below this line
+  const [a, b, ...rest] = list; // Change this line
+  // Only change code above this line
+  console.log(a, b, rest);
+}
+const arr = removeFirstTwo(source);
+
+// > Use Destructuring Assignment to Pass an Object as a Function's Parameters
+
+/*
+-
+In some cases, you can destructure the object in a function argument itself.
+Consider the code below:
+*/
+
+const profileUpdate = (profileData) => {
+    const { name, age, nationality, location } = profileData;
+    console.log(name, age, nationality, location);
+};
+
+profile = {
+    name: 'tito',
+    age: 19,
+    nationality: 'Burundian',
+    location: 'Kimihurura, Gasabo, Kigali, Rwanda'
+};
+
+profileUpdate(profile);
+/*
+-
+This effectively destructures the object sent into the function.
+This can also be done in-place:
+*/
+
+const profileUpdate = ({ name, age, nationality, location }) => {
+
+}
