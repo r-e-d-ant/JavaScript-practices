@@ -210,3 +210,17 @@ function findGreaterOrEqual(a, b) {
 checkSign(10);
 
 // > // Use Recursion to Create a Range of Numbers
+function rangeOfNumbers(startNum, endNum) {
+    if (endNum - startNum === 0){
+        return [startNum];
+    } else {
+        const numbers = rangeOfNumbers(startNum, endNum - 1);
+        numbers.push(endNum);
+        console.log(numbers);
+    }
+  }
+
+rangeOfNumbers(1, 5)
+
+// ===-----------=== //
+
