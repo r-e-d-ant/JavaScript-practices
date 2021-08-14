@@ -150,7 +150,7 @@ function lookUpProfile(name, prop){
 
 lookUpProfile("Harry", "number");
 
-// > Random numbers
+// > Generate Random fraction with Js
 function randomDecimal(){
     console.log(Math.floor(1.6))
 }
@@ -189,3 +189,24 @@ function randomRange(myMin, myMax) {
 randomRange(2, 10)
 
 // > Return an integer from string
+
+console.log(parseInt("2002"))
+console.log(parseInt("22", 16))
+
+// > Use the conditionary (Ternary) operator
+function checkSign(num) {
+    return (num === 0) ? "zero"
+      : (num > 0) ? "positive"
+      : "negative";
+    }
+
+// > Use Multiple Conditional (Ternary) Operators
+function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a > b) ? "a is greater" 
+      : "b is greater";
+}
+  
+checkSign(10);
+
+// > // Use Recursion to Create a Range of Numbers
