@@ -883,3 +883,10 @@ let storeMatch = getMach.test(myString);
 console.log(storeMatch); // true.
 
 // > Ignore case while matching (Using the "i" flag).
+
+let myString = "Hello, John, Peter, Mary, Nadia: Yeah";
+let getMach = /Yes|Yeah/i;
+let storeMatch = getMach.test(myString);
+console.log(storeMatch); // true.
+
+// > Extract Matches.
