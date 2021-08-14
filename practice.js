@@ -226,7 +226,7 @@ rangeOfNumbers(1, 5)
 
 // = ECMASCRIPT (ES6)
 
-// > Explore Differences Between the var and let Keywords
+// > Explore Differences Between the var let and Const Keywords
 
 /*
 -
@@ -262,3 +262,71 @@ F_NAME = F_NAME + " Thierry";  // Error
 console.log(F_NAME)
 
 // > Prevent Object Mutation
+
+const attendenceList = {
+    att_1 : "Muto",
+    att_2 : "Tito",
+    att_3 : "Aratema",
+    att_4 : "Aratonora",
+    att_5 : "Igitoki",
+}
+
+Object.freeze(attendenceList)
+attendenceList.att_1 = "nigga"; // Nothing gonna happen.
+console.log(attendenceList)
+
+// > Use Arrow Functions to Write Concise Anonymous Functions
+
+const myFunc = function(){
+    const myVal = "Hello, World";
+    return myVal;
+}
+
+console.log(myFunc());
+
+/*
+-
+ES6 provides us with the syntactic sugar to not have
+to write anonymous functions this way.
+Instead, you can use arrow function syntax:
+*/
+
+const myFunc = () => {
+    myVal = "Hello, World.";
+    return myVal;
+}
+
+console.log(myFunc());
+
+/*
+-
+When there is no function body, and only a return value,
+arrow function syntax allows you to omit the keyword return 
+as well as the brackets surrounding the code. 
+*/
+
+const myFunc = () => "Hello, world.";
+console.log(myFunc())
+
+// > Write Arrow Functions with Parameters
+
+const doubler = (item) => item * 2;
+console.log(doubler(2002))
+
+/*
+-
+If an arrow function has a single parameter,
+the parentheses enclosing the parameter may be omitted.
+*/
+
+const doubler = item => item * 2;
+console.log(doubler(2002))
+
+/*
+-
+It is possible to pass more than one argument into an arrow function.
+*/
+
+const multiplier = (item, multiply) => item * multiply;
+console.log(multiplier(2, 6))
+
