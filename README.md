@@ -1,2 +1,2 @@
 # JavaScript-practices
-This repo contain JavaScript practices and chellenges.
+This repo contain JavaScript practices and challenges.
