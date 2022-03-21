@@ -1,5 +1,7 @@
 console.log("Hello, World")
 
+// :)
+
 // Legend
 // = Chapter
 // > Title
